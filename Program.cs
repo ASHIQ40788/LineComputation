@@ -6,11 +6,25 @@ using System.Threading.Tasks;
 
 namespace LineComputation
 {
-    class Program
+    class LineComputation
+
     {
-        static void Main(string[] args)
+        // Function to calculate distance
+        static double distance(int x1, int y1, int x2, int y2)
         {
-            //WELCOME TO LINE COMPUTATION
+            // Calculating distance
+            return Math.Sqrt(Math.Pow(x2 - x1, 2) +
+                          Math.Pow(y2 - y1, 2) * 1.0);
         }
+
+        // Driver code
+        public static void Main()
+        {
+            Console.WriteLine(Math.Round(distance(8, 7, 6, 5)
+                                       * 100000.0) / 100000.0);
+            Console.Read();
+        }
+
     }
 }
+
