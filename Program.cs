@@ -1,30 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿// C# program to check if
+// given two straight lines
+// are identical or not
+using System;
 namespace LineComputation
 {
-    class LineComputation
 
+    class CheckEquality
     {
-        // Function to calculate distance
-        static double distance(int x1, int y1, int x2, int y2)
+
+        // Function to check if they are identical
+        static void EQUALITY(double a1, double b1, double c1, double a2, double b2, double c2)
         {
-            // Calculating distance
-            return Math.Sqrt(Math.Pow(x2 - x1, 2) +
-                          Math.Pow(y2 - y1, 2) * 1.0);
+            if ((a1 / a2 == b1 / b2)
+                && (a1 / a2 == c1 / c2)
+                && (b1 / b2 == c1 / c2))
+                Console.WriteLine("The given straight" + " lines are identical(equal)");
+
+            else
+                Console.WriteLine("The given straight" + " lines are not identical(equal)");
         }
 
-        // Driver code
-        public static void Main()
+        // Driver Code
+        public static void Main(String[] args)
         {
-            Console.WriteLine(Math.Round(distance(8, 7, 6, 5)
-                                       * 100000.0) / 100000.0);
-            Console.Read();
+            double a1 = -2, b1 = 4,
+                    c1 = 3, a2 = -6,
+                    b2 = 12, c2 = 9;
+            EQUALITY(a1, b1, c1, a2, b2, c2);
+            Console.ReadKey();
         }
-
     }
 }
-
