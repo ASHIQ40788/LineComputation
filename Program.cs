@@ -1,33 +1,38 @@
-﻿// C# program to check if
-// given two straight lines
-// are identical or not
-using System;
+﻿using System;
 namespace LineComputation
 {
 
     class CheckEquality
     {
 
-        // Function to check if they are identical
-        static void EQUALITY(double a1, double b1, double c1, double a2, double b2, double c2)
+     
+        static void Main(String[] args)
         {
-            if ((a1 / a2 == b1 / b2)
-                && (a1 / a2 == c1 / c2)
-                && (b1 / b2 == c1 / c2))
-                Console.WriteLine("The given straight" + " lines are identical(equal)");
+            int x = 1;
+            int y = 2;
+            double equ1 = "3 * x - 2 * y - 2";
+            double equ2 = "7 * x + 3 * y - 43";
+            
+
+            if (equ1 > equ2)
+            {
+                Console.WriteLine("equ1 is greater");
+                //Console.WriteLine(equ1);
+            }
 
             else
-                Console.WriteLine("The given straight" + " lines are not identical(equal)");
-        }
-
-        // Driver Code
-        public static void Main(String[] args)
-        {
-            double a1 = -2, b1 = 4,
-                    c1 = 3, a2 = -6,
-                    b2 = 12, c2 = 9;
-            EQUALITY(a1, b1, c1, a2, b2, c2);
+                if (equ2 > equ1)
+            {
+                Console.WriteLine("equ2 is greater");
+                //Console.WriteLine(equ2);
+            }
+            else
+                if (equ1 == equ2)
+            {
+                Console.WriteLine("both lines are equal");
+            }
             Console.ReadKey();
         }
     }
+   
 }
