@@ -2,37 +2,53 @@
 namespace LineComputation
 {
 
-    class CheckEquality
+   namespace LineComputation
+{
+    class LineComparisionProgram
     {
+        public int x1, y1, x2, y2;
 
-     
-        static void Main(String[] args)
+        public LineComparisionProgram()
         {
-            int x = 1;
-            int y = 2;
-            double equ1 = "3 * x - 2 * y - 2";
-            double equ2 = "7 * x + 3 * y - 43";
-            
+            for (int i = 1; i < 2; i++)
+            {
+                Console.WriteLine("Enter coordinate=x1:");
+                this.x1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter coordinate=y1:");
+                this.y1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter coordinate=x2:");
+                this.x2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter coordinate=y2:");
+                this.y2 = Convert.ToInt32(Console.ReadLine());
+            }
+        }
 
-            if (equ1 > equ2)
+      
+        //creating a comparing line method 
+        public void ComparingLines(string line1, string line2)
+        {
+            if (line1.CompareTo(line2) > 0)
             {
-                Console.WriteLine("equ1 is greater");
-                //Console.WriteLine(equ1);
+                Console.WriteLine("Line1 is greater than line2");
             }
-
+            else if (line1.CompareTo(line2) < 0)
+            {
+                Console.WriteLine("Line1 is lesser than line2");
+            }
             else
-                if (equ2 > equ1)
             {
-                Console.WriteLine("equ2 is greater");
-                //Console.WriteLine(equ2);
+                Console.WriteLine("Both lines are equal");
             }
-            else
-                if (equ1 == equ2)
-            {
-                Console.WriteLine("both lines are equal");
-            }
-            Console.ReadKey();
+        }
+        static void Main(string[] args)
+        {
+            //creating objects 
+            LineComparisionProgram obj1 = new LineComparisionProgram();
+            double line1 = obj1.Length();
+            LineComparisionProgram obj2 = new LineComparisionProgram();
+            double line2 = obj2.Length();
+            obj1.ComparingLines(line1.ToString(), line2.ToString());
+            Console.ReadLine();
         }
     }
-   
 }
